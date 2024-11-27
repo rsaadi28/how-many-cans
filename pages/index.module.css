@@ -5,3 +5,10 @@
   align-items: center;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 500px) {
+  .section {
+    width: 100%;
+    padding: 2px;
+  }
+}

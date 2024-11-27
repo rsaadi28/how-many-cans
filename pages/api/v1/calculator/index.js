@@ -15,7 +15,8 @@ export default async function handler(req, res) {
   try {
     const validationResults = validateWalls(walls);
     if (!validationResults.isValid) {
-      return res.status(400).json({ error: validationResults.errors });
+      // Retornando erros com quebras de linha
+      return res.status(400).json({ error: validationResults.errors.join('\n') });
     }
 
     const paintResult = calculatePaint(walls);
