@@ -18,7 +18,6 @@ describe('calculatePaint', () => {
     expect(response.status).toBe(200);
 
     const responseBody = await response.json();
-    console.log(responseBody.data.cans);
 
     expect(responseBody.success).toBe(true);
     expect(responseBody.data).toHaveProperty("totalArea");
@@ -51,7 +50,6 @@ describe('calculatePaint', () => {
     expect(response.status).toBe(200);
 
     const responseBody = await response.json();
-    console.log(responseBody.data.cans);
 
     expect(responseBody.success).toBe(true);
     expect(responseBody.data).toHaveProperty("totalArea");

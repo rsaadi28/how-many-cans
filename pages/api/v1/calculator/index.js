@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true, data: paintResult });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     return res.status(500).json({ error: 'Erro no servidor', details: error.message });
   }
 }
