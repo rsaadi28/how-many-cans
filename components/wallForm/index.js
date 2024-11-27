@@ -22,7 +22,6 @@ export default function Home() {
 
   const handleSubmit = async () => {
     try {
-      console.log(JSON.stringify({ walls }));
       setError(null);
       const response = await fetch('/api/v1/calculator', {
         method: 'POST',
@@ -70,12 +69,12 @@ export default function Home() {
       {result && (
         <div className={styles.result}>
           <h2>Resultado</h2>
-          <p>Área total: {result.totalArea} m²</p>
-          <p>Litros necessários: {result.litersRequired} L</p>
+          <p>Área total: {result.totalArea.toFixed(1).replace('.', ',')} m²</p>
+          <p>Litros necessários: {result.litersRequired.toFixed(1).replace('.', ',')} L</p>
           <ul>
             {result.cans.map((can) => (
               <li key={can.size}>
-                {can.quantity}x {can.size} L
+                {can.quantity} {can.quantity > 1 ? 'latas' : 'lata'} de {can.size.toString().replace('.', ',')} L
               </li>
             ))}
           </ul>
