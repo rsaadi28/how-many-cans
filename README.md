@@ -37,7 +37,7 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
    npm run services:up
    ```
 
-2. Exetute o projeto (Pode-se rodar direto o projeto pois já é criado os serviços nesse script):
+2. Execute o projeto (Pode-se rodar direto o projeto pois já é criado os serviços nesse script):
 
    ```bash
    npm run dev

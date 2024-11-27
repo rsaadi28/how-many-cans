@@ -1,3 +1,4 @@
+import { DOOR_AREA, WINDOW_AREA } from "constants/constants";
 import database from "infra/database";
 import { calculatePaint } from "models/calculator";
 
@@ -36,13 +37,11 @@ export default async function handler(req, res) {
 // Função para validar as paredes
 function validateWalls(walls) {
   const errors = [];
-  const doorArea = 0.8 * 1.9;
-  const windowArea = 2.0 * 1.2;
 
   for (let i = 0; i < walls.length; i++) {
     const { width, height, doors, windows } = walls[i];
     const wallArea = width * height;
-    const openingsArea = doors * doorArea + windows * windowArea;
+    const openingsArea = doors * DOOR_AREA + windows * WINDOW_AREA;
 
     if (wallArea < 1 || wallArea > 50) {
       errors.push(`Parede ${i + 1} deve ter entre 1 e 50 metros quadrados.`);
