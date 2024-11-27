@@ -37,7 +37,7 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
    npm run migration:up
    ```
 
-2. Podemos subir os servições com:
+2. Podemos subir os serviços com:
    ```bash
    npm run services:up
    ```
@@ -46,9 +46,31 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
    npm run dev
    ```
 
-## **inalizando os serviços**
+## **Executando os testes**
+
+1. Executar somente uma vez:
+
+   ```bash
+   npm run test
+   ```
+
+2. Executar ao longo do desenvolvimento ideal para TDD
+   ```bash
+   npm run test:watch
+   ```
+
+## **Finalizando os serviços**
 
 1. Para parar e remover os containers Docker quando não estiver mais utilizando o projeto:
    ```bash
    npm run services:down
    ```
+
+## Autor
+
+- **Rodrigo Saadi Dantas Teixeira** - [GitHub](https://github.com/rsaadi28)
+
+## Agradecimentos
+
+- Projeto voltado para avaliação técnica para a empresa Digital Republic;
+- Agradeço pela oportunidade de mostrar meu trabalho;
