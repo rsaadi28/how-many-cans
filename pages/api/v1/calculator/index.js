@@ -1,6 +1,7 @@
+import database from "infra/database";
 import { calculatePaint } from "models/calculator";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
   }
@@ -18,8 +19,15 @@ export default function handler(req, res) {
     }
 
     const paintResult = calculatePaint(walls);
+
+    await database.query({
+      text: "INSERT INTO paints (total_area, liters_required,cans) VALUES ($1,$2,$3);",
+      values: [paintResult.totalArea, paintResult.litersRequired, JSON.stringify(paintResult.cans)]
+    });
+
     return res.status(200).json({ success: true, data: paintResult });
   } catch (error) {
+    console.log(error.message);
     return res.status(500).json({ error: 'Erro no servidor', details: error.message });
   }
 }
