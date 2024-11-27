@@ -16,7 +16,7 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
 1. Clone o repositório:
 
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/rsaadi28/how-many-cans.git
    cd how-many-cans
    ```
 
@@ -31,19 +31,21 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
 
 ## **Como executar**
 
-1. Execute as migrations:
+1. Execute o comando para subir os serviços do sistema (para windows é preciso ter o docker desktop rodando na maquina):
 
-   ```bash
-   npm run migration:up
-   ```
-
-2. Podemos subir os serviços com:
    ```bash
    npm run services:up
    ```
-   Mas ao rodar o projeto em desenvolvimento já executado a criação do ambiente.
+
+2. Exetute o projeto (Pode-se rodar direto o projeto pois já é criado os serviços nesse script):
+
    ```bash
    npm run dev
+   ```
+
+3. Execute as migrations em outro terminal:
+   ```bash
+   npm run migration:up
    ```
 
 ## **Executando os testes**
@@ -65,6 +67,10 @@ Projeto desenvolvido para averiguação de habilidades para a empresa Digital Re
    ```bash
    npm run services:down
    ```
+
+## **Observações**
+
+1. Para fins demostrativos criei uma estrutura de banco de dados que somente insere os resultados dos calculos;
 
 ## Autor
 
